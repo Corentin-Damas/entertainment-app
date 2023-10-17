@@ -57,7 +57,6 @@ body {
   flex-direction: column;
   width: 90%;
   padding-top: 2.4rem;
-
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -105,6 +104,10 @@ p.light {
   font-size: 1.3rem;
   line-height: 1.6rem;
   color: var(--text-color);
+}
+
+.section-title{
+  padding-left: 2rem;
 }
 
 /* ===== NavBar ===== */
@@ -163,6 +166,9 @@ p.light {
   border: 1px solid var(--primary-red);
 }
 
+
+/* ===== SearchBar ===== */
+
 .searchBar {
   padding-left: 2rem;
   height: 10rem;
@@ -197,60 +203,202 @@ p.light {
 
 /* ===== Trending ===== */
 
-.trending{
+.trending {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+}
+
+.carousel {
+  display: flex;
+  justify-content: left;
+  gap: 2rem;
   padding-left: 2rem;
+  margin-bottom: 3.6rem;
 }
 
-.carousel{
-display: flex;
-justify-content: left;
-gap: 2rem;
-
+.trending__el-box {
+  width: 47rem;
+  height: 23rem;
+  position: relative;
+  border-radius: 3rem;
 }
 
-.trending__el-box{
- width: 47rem;
- height: 23rem;
- position: relative;
- border-radius: 3rem;
+.trending__el-box:hover > .fade {
+  background-image: linear-gradient(to bottom, #222d494f, #000000);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 300;
+  cursor: pointer;
+}
+.trending__el-box:hover > .fade:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5rem;
+  width: 12rem;
+  transform: translate(-50%, -50%);
+
+  background-image: url(./assets/icon-play.svg),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.432),
+      rgba(255, 255, 255, 0.432)
+    );
+  background-repeat: no-repeat;
+  background-position: left 10% center;
+
+  content: "Play";
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 2.4rem;
+  color: var(--text-color);
+
+  padding-left: 5.2rem;
+  padding-right: 10%;
+  padding-top: 0.9rem;
+
+  border-radius: 5rem;
 }
 
-.trending__el-img{
+.trending__el-img {
   position: absolute;
   top: 0;
   left: 0;
 
   z-index: 1;
   border-radius: 3rem;
-
 }
-.fade{
+
+.fade {
   position: relative;
   width: 47rem;
   height: 23rem;
-  background-image: linear-gradient(to bottom,  #161d2f00 30%, #0b0f18);
+  background-image: linear-gradient(to bottom, #161d2f00 30%, #0b0f18);
   z-index: 200;
   border-radius: 3rem;
 }
 
-
-.trending__el-all{
+.trending__el-all {
   bottom: 3rem;
   left: 3rem;
   position: absolute;
   gap: 0.7rem;
   z-index: 300;
 }
-.trending__el-details{
-  display:flex;
+.trending__el-details {
+  display: flex;
   justify-content: left;
   align-items: center;
   gap: 0.7rem;
 }
 
+.trending__bookmark {
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  z-index: 400;
+  background-color: #5a698f70;
+  color: var(--text-color);
+
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.trending__bookmark:hover {
+  background-color: var(--text-color);
+  color: var(--secondary-deepblue);
+}
+
+/* ===== Recommendation ===== */
+.recommendation__grid{
+  padding: 2rem;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  row-gap: 3.2rem;
+  column-gap: 4rem;
+}
+
+.recommendation__el-box{
+  position: relative;
+  cursor: pointer;
+}
+
+.recommendation__el-img img{
+  border-radius: 2rem;
+  margin-bottom: 1.2rem;
+
+}
+
+.recommendation__el-bookmark{
+  position: absolute;
+  top: 1.6rem;
+  right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  color: var(--text-color);
+  background-color: #5a698f88;
+  border-radius: 50%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 201;
+}
+.recommendation__el-bookmark:hover{
+  color: var(--secondary-deepblue);
+  background-color: #ffffffa2;
+}
+
+.play-icon{
+  color: var(--text-color);
+}
+
+.recommendation__el-fade{
+  display: none;
+}
+
+.recommendation__el-box:hover .recommendation__el-fade{
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+
+  background-color: #1317226b;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 4rem;
+  padding: 1rem 1.5rem 1rem 1rem  ;
+  z-index: 200;
+
+}
+.recommendation__el-box:hover .recommendation__el-img::after{
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-image: linear-gradient(to top, #00000000 , #0b0f18be);
+  border-radius: 2rem;
+  cursor: pointer;
+
+}
 
 /* ===== Buttons ===== */
 

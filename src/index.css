@@ -152,7 +152,10 @@ p.light {
 }
 
 .nav-selected {
-  fill: var(--text-color);
+  color: var(--text-color);
+}
+.nav-selected:hover {
+  color: var(--text-color);
 }
 
 .navbar-bot img {
@@ -324,7 +327,7 @@ p.light {
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  align-items: center;
+
   justify-items: center;
   row-gap: 3.2rem;
   column-gap: 4rem;
@@ -403,17 +406,6 @@ p.light {
 /* ===== Buttons ===== */
 
 button {
-  font-family: var(--font-family);
-  font-weight: 300;
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-  color: var(--text-color);
-
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  background-color: var(--primary-red);
-  cursor: pointer;
   transition: all 0.25s;
 }
 button:hover {
@@ -424,4 +416,9 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* ===== Buttons ===== */
+.u-top-margin-s{
+  margin-top: 2rem;
 }

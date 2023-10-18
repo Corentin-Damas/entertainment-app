@@ -1,9 +1,10 @@
-function NavBar() {
+function NavBar({ category, setCategory }) {
   return (
     <nav className="navbar">
       <div className="navbar-top">
         <div className="navbar-logo">
           <svg
+            id="logo"
             width="33"
             height="27"
             className="logo"
@@ -15,21 +16,29 @@ function NavBar() {
             />
           </svg>
         </div>
+
         <div className="navbar-icons">
           <svg
             id="icon-home"
             width="20"
             height="20"
-            className="nav-selected nav-icon"
+            className={`nav-icon ${category=== "all"? "nav-selected": ""}`} 
+            onClick={()=>setCategory("all")}
+
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z" />
+            <path
+              d="M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z"
+              fill="currentColor"
+            />
           </svg>
 
           <svg
+            id="icon-movie"
             width="20"
             height="20"
-            className="nav-icon"
+            className={`nav-icon ${category=== "movie"? "nav-selected": ""}`} 
+            onClick={()=>setCategory("movie")}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -39,9 +48,11 @@ function NavBar() {
           </svg>
 
           <svg
+            id="icon-tv"
             width="20"
             height="20"
-            className="nav-icon"
+            className={`nav-icon ${category=== "tv"? "nav-selected": ""}`} 
+            onClick={()=>setCategory("tv")}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -51,9 +62,11 @@ function NavBar() {
           </svg>
 
           <svg
+            id="icon-marked"
             width="17"
             height="20"
-            className="nav-icon"
+            className={`nav-icon ${category=== "marked"? "nav-selected": ""}`} 
+            onClick={()=>setCategory("marked")}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
